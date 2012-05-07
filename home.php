@@ -1,12 +1,3 @@
-<?php //session_start();
-	include("connect_bdd.php");
-	
-	$sql = "SELECT nom_article,date_debut,date_fin,nb_article,prix,nb_decr,image FROM ventes";
-	$req = mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
-//	$data = mysql_fetch_array($req); 
-	
-?>
-
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">

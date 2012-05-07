@@ -14,15 +14,32 @@
 			echo 'Il y a un problème dans ta requête';
 		}
 	}
-	if(isset($_SESSION["pseudo"]))
+	if(isset($_SESSION["email"]))
 	{
 		$status = true;
 		$header = "header_client_co.html";
 	}
 	else
 	{
-		$status = false;
-		$header = "header_client_deco.html";
+		if(isset($_POST["connect"]) && $_POST["connect"] == "Envoyer")
+		{
+			include("ctr_connection_client.php");
+			$status = ctr_connection_client($_POST["username"], $_POST["pass"]);
+			if($status)
+			{
+				$_SESSION["email"] = $_POST["username"];
+				$header = "header_client_co.html";
+			}
+			else
+			{
+				$header = "header_client_deco.html";
+			}
+		}
+		else
+		{
+			$status = false;
+			$header = "header_client_deco.html";
+		}
 	}
 	if(isset($_POST["action"]))
 	{

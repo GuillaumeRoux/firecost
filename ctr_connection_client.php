@@ -1,27 +1,27 @@
 <?php 
-
-include_once("connect_db.php");
-include_once("connection_client.php");
-
-	
-$connect = connect_bdd();
-if ($connect)
+	function ctr_connection_client($email, $password)
 	{
-		$client = connectionClient($_POST['email'], $_POST['password']);
+		$request_client = 'SELECT mail_part FROM particuliers WHERE mail_part ="'.$email.'" AND pass = "'.$password.'"';
 		
-		
-if (empty($client))
-	{
-			echo "email/password invalide";
+		if($result = mysql_query($request_client))
+		{
+			while($ligne = mysql_fetch_array($result))
+			{
+				$client = $ligne["mail_part"];
+			}
+			if(empty($client))
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+		else
+		{
+			echo "Problème dans ta requête";
+			return false;
+		}		
 	}
-else
-	{
-		include_once("page_d'accueil2.php")
-	} 
-	else
-	{
-		echo "connexion fail";
-	}
-}
-
 ?>
