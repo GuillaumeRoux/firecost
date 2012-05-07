@@ -2,7 +2,7 @@
 	session_start();
 	include("connect_bdd.php");
 	include("bdd_rubrics.php");
-	
+	 
 	$footer = "footer.html";
 	
 	$test = connect_bdd();
