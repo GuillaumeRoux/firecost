@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ajouter une nouvelle vente</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script type="text/javascript" src="calendar.js"></script>
+<SCRIPT language=Javascript>
+     
+	function isNumberKey(evt)
+	{
+		var charCode = (evt.which) ? evt.which : event.keyCode
+		if (charCode > 31 && (charCode < 48 || charCode > 57))
+		return false;
+		else
+		return true;
+	}
+      
+</SCRIPT>
+<SCRIPT language=Javascript>
+     
+	function isLetterKey(evt)
+	{
+		var charCode = (evt.which) ? evt.which : event.keyCode
+		if (charCode > 31 && (charCode < 65 || charCode > 90 && charcode < 97 || charCode > 122))
+		return false;
+		else
+		return true;
+	}
+      
+</SCRIPT>
+</head>
+<body id="main_body" >
+	
+	<img id="top" src="images/top.png" alt="">
+	<div id="form_container">
+	
+		<h1><a>Ajouter une nouvelle vente</a></h1>
+		<form id="form_392313" class="appnitro"  method="post" action="">
+					<div class="form_description">
+			<h2>Ajouter une nouvelle vente</h2>
+		</div>						
+			<ul >
+			
+					<li id="li_1" >
+		<label class="description" for="element_1">Article</label>
+		<span>
+			<input id="element_1_1" name= "name_art" class="element text" maxlength="50" size="14" value="" required="required" onkeypress="return isLetterKey(event)"/>
+			<label>Nom</label>
+		</span>
+		</li>		<li id="li_2" >
+		<label class="description" for="element_2">Description </label>
+		
+		<div>
+			<input id="element_2_1" name="adress" class="element text large" maxlength="255" value="" type="text" required="required">
+			<label for="element_2_1">Description</label>
+		</div>
+	
+		<div>
+			<input id="element_2_2" name="adress2" class="element text large" maxlength="255" value="" type="text">
+			<label for="element_2_2">Description ligne 2</label>
+		</div>
+	
+		<div class="left">
+			<input id="element_2_3" name="price_art" class="element text medium" maxlength="10" value="" type="text" required="required" <!-- fct enlevant les lettres --> onkeypress="return isLetterKey(event)">
+			<label for="element_2_3">Prix</label>
+		</div>
+	
+		<div class="right">
+			<input id="element_2_4" name="nbr_art" class="element text medium" maxlength="10" value="" type="text" required="required" <!-- fct enlevant les lettres --> onkeypress="return isLetterKey(event)">
+			<label for="element_2_4">Nombre d'article</label>
+		</div>
+	
+		<div class="left">
+			<input id="element_2_5" name="price_decr" class="element text medium" maxlength="10" value="" type="text" required="required"<!-- fct enlevant les lettres --> onkeypress="return isLetterKey(event)">
+			<label for="element_2_5">Prix décroissant</label>
+		</div>
+	
+		<div class="right">
+			<input id="element_2_6" name="nbr_decr" class="element text medium" maxlength="10" value="" type="text" required="required"<!-- fct enlevant les lettres --> onkeypress="return isLetterKey(event)">
+			<label for="element_2_6">Nombre d'article avant décroissance</label>
+	</div> 
+		</li>		<li id="li_3" >
+		<label class="description" for="element_3">Date du début de la vente </label>
+		<span>
+			<input id="element_3_1" name="month" class="element text" size="2" maxlength="2" value="" type="text" required="required" onkeypress="return isNumberKey(event)"> /
+			<label for="element_3_1">MM</label>
+		</span>
+		<span>
+			<input id="element_3_2" name="day" class="element text" size="2" maxlength="2" value="" type="text" required="required" onkeypress="return isNumberKey(event)"> /
+			<label for="element_3_2">JJ</label>
+		</span>
+		<span>
+	 		<input id="element_3_3" name="year" class="element text" size="4" maxlength="4" value="" type="text" required="required" onkeypress="return isNumberKey(event)">
+			<label for="element_3_3">AAAA</label>
+		</span>
+	
+		<span id="calendar_3">
+			<img id="cal_img_3" class="datepicker" src="images/calendar.gif" alt="Selectionnez une date.">	
+		</span>
+		<script type="text/javascript">
+			Calendar.setup({
+			inputField	 : "element_3_3",
+			baseField    : "element_3",
+			displayArea  : "calendar_3",
+			button		 : "cal_img_3",
+			ifFormat	 : "%B %e, %Y",
+			onSelect	 : selectDate
+			});
+		</script>
+		 
+		</li>		<li id="li_4" >
+		<label class="description" for="element_4">Date de fin de la vente </label>
+		<span>
+			<input id="element_4_1" name="month" class="element text" size="2" maxlength="2" value="" type="text" required="required" onkeypress="return isNumberKey(event)"> /
+			<label for="element_4_1">MM</label>
+		</span>
+		<span>
+			<input id="element_4_2" name="day" class="element text" size="2" maxlength="2" value="" type="text" required="required" onkeypress="return isNumberKey(event)"> /
+			<label for="element_4_2">JJ</label>
+		</span>
+		<span>
+	 		<input id="element_4_3" name="year" class="element text" size="4" maxlength="4" value="" type="text" required="required" onkeypress="return isNumberKey(event)">
+			<label for="element_4_3">AAAA</label>
+		</span>
+	
+		<span id="calendar_4">
+			<img id="cal_img_3" class="datepicker" src="images/calendar.gif" alt="Selectionnez une date.">	
+		</span>
+		<script type="text/javascript">
+			Calendar.setup({
+			inputField	 : "element_4_3",
+			baseField    : "element_4",
+			displayArea  : "calendar_4",
+			button		 : "cal_img_3",
+			ifFormat	 : "%B %e, %Y",
+			onSelect	 : selectDate
+			});
+		</script>
+		</li>		<li class="buttons">
+			    <input type="hidden" name="form_id" value="client" />
+			    
+				<input id="saveForm" class="button_text" type="submit" name="submit" value="Valider" />
+		</li>
+			</ul>
+		</form>	
+	</div>
+	<img id="bottom" src="images/bottom.png" alt="">
+	</body>
+</html>
