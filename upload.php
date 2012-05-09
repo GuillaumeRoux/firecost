@@ -4,7 +4,7 @@ $fichier = basename($_FILES['picture']['name']);
 $taille_maxi = 10485760;
 $taille = filesize($_FILES['picture']['tmp_name']);
 $extensions = array('.png', '.jpg', '.jpeg');
-$extension = strrchr($_FILES['picture']['name'], '.');
+$extension = strrchr($_FILES['picture']['name'], '.'); 
 //Début des vérifications de sécurité...
 if(!in_array($extension, $extensions))
 {
